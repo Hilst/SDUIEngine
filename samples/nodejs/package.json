@@ -1,0 +1,11 @@
+{
+  "name": "kmm-sample-node",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "kmm-sdui": "file:../../build/js/packages/kmm-sdui",
+    "ts-node": "^10.9.2"
+  }
+}
