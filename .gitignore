@@ -40,3 +40,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/iosExtraTasks/temp_ios/
+/iosExtraTasks/Package.swift

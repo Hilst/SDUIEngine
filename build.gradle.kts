@@ -1,5 +1,7 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
+
 plugins {
-    kotlin("multiplatform") version "1.9.0"
+    kotlin("multiplatform") version "1.9.10"
 }
 
 group = "hilst.sdui.engine"
@@ -10,6 +12,19 @@ repositories {
 }
 
 kotlin {
+    val xcf = XCFramework()
+    val iosTarget = listOf(iosX64(), iosArm64(), iosSimulatorArm64())
+
+    iosTarget.forEach {
+        it.binaries.framework {
+            baseName = rootProject.name
+
+            binaryOption("bundleId", "hilst.${rootProject.name}")
+            xcf.add(this)
+            isStatic = true
+        }
+    }
+
     js(IR) {
         moduleName = "kmm-sdui"
         nodejs()

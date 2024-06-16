@@ -1,6 +1,6 @@
 import { SDUIEngineJS } from "kmm-sdui";
 
-const halo = 'Hello World'
+const halo = 'HelloWorld' // len 10
 const engine = new SDUIEngineJS()
 
 function uppercase(input: string): string {
@@ -15,8 +15,3 @@ function fibonacciOfLen(input: string, sdui: SDUIEngineJS): number {
 
 console.log(uppercase(halo))
 console.log(fibonacciOfLen(halo, engine))
-
-
-console.log("#====================#")
-
-engine.consoleLogFib(5)
